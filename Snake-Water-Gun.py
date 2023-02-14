@@ -3,8 +3,8 @@ from tkinter import *
 import tkinter.messagebox as msg
 import random
 from PIL import Image,ImageTk
-import playsound
-import time
+from playsound import playsound
+
 def ok():
     if E1_var.get() != "":
         CTkLabel(master=root, text=f"{E1_var.get()} Vs Computer",width=300, text_color="white", font=("roboto", 25)).place(x=150,
@@ -37,35 +37,72 @@ def play(x):
         if generate == 0:
             Label(win, image=img1).place(x=300, y=30)
             CTkLabel(master=win, text="Match Draw 👊", text_color="white", font=('roboto', 20)).place(x=130, y=130)
+            try:
+                playsound('lose.mp3')
+            except:
+                playsound('lose.mp3')
         elif generate == 1:
             Label(win, image=img2).place(x=300, y=30)
             CTkLabel(master=win, text="You won 👍", text_color="white", font=('roboto', 20)).place(x=130, y=130)
+            try:
+                playsound('winner.mp3')
+            except:
+                playsound('winner.mp3')
 
         else:
             Label(win, image=img3).place(x=300, y=30)
             CTkLabel(master=win, text="You lose 👎", text_color="white", font=('roboto', 20)).place(x=130, y=130)
+            try:
+                playsound('lose.mp3')
+            except:
+                playsound('lose.mp3')
     elif x==2:
         Label(win, image=img2).place(x=50, y=30)
         if generate == 0:
             Label(win, image=img1).place(x=300, y=30)
             CTkLabel(master=win, text="You lose 👎", text_color="white", font=('roboto', 20)).place(x=130, y=150)
+            try:
+                playsound('lose.mp3')
+            except:
+                playsound('lose.mp3')
         elif generate == 1:
             Label(win, image=img2).place(x=300, y=30)
             CTkLabel(master=win, text="Match Draw 👊", text_color="white", font=('roboto', 20)).place(x=130, y=150)
+            try:
+                playsound('lose.mp3')
+            except:
+                playsound('lose.mp3')
         else:
             Label(win, image=img3).place(x=300, y=30)
             CTkLabel(master=win, text="You won 👍", text_color="white", font=('roboto', 20)).place(x=130, y=150)
+            try:
+                playsound('winner.mp3')
+            except:
+                playsound('winner.mp3')
     else:
         Label(win, image=img3).place(x=50, y=30)
         if generate == 0:
             Label(win, image=img1).place(x=300, y=30)
             CTkLabel(master=win, text="You won 👍", text_color="white", font=('roboto', 20)).place(x=130, y=150)
+            try:
+                playsound('winner.mp3')
+            except:
+                playsound('winner.mp3')
         elif generate == 1:
             Label(win, image=img2).place(x=300, y=30)
             CTkLabel(master=win, text="You lose 👎", text_color="white", font=('roboto', 20)).place(x=130, y=150)
+
+            try:
+                playsound('lose.mp3')
+            except:
+                playsound('lose.mp3')
         else:
             Label(win, image=img3).place(x=300, y=30)
             CTkLabel(master=win, text="Match Draw 👊", text_color="white", font=('roboto', 20)).place(x=130, y=150)
+            try:
+                playsound('lose.mp3')
+            except:
+                playsound('lose.mp3')
     win.mainloop()
 root = Tk()
 root.geometry('600x700+420+50')
